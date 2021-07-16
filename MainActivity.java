@@ -104,13 +104,40 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        mincrementage.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                intage=intage+4;
+                age2=String.valueOf(intage);
+                mcurrentage.setText(age2);
+                return false;
+            }
+        });
 
         mdecrementage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 intage=intage-1;
+                if (intage < 0){
+                    Toast.makeText(MainActivity.this, "Age Never Comes in Minus ", Toast.LENGTH_SHORT).show();
+                    intage = 0;
+                }
                 age2=String.valueOf(intage);
                 mcurrentage.setText(age2);
+            }
+        });
+
+        mdecrementage.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                intage=intage-5;
+                if (intage < 0){
+                    Toast.makeText(MainActivity.this, "Age Never Comes in Minus ", Toast.LENGTH_SHORT).show();
+                    intage = 0;
+                }
+                age2=String.valueOf(intage);
+                mcurrentage.setText(age2);
+                return false;
             }
         });
 
@@ -123,12 +150,40 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        mincrementweight.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                intweight=intweight+4;
+                weight2=String.valueOf(intweight);
+                mcurrentweight.setText(weight2);
+                return false;
+            }
+        });
+
         mdecrementweight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 intweight=intweight-1;
+                if (intweight < 0){
+                    Toast.makeText(MainActivity.this, "Weight Never Comes in Minus", Toast.LENGTH_SHORT).show();
+                    intweight = 0;
+                }
                 weight2=String.valueOf(intweight);
                 mcurrentweight.setText(weight2);
+            }
+        });
+
+        mdecrementweight.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                intweight = intweight - 4;
+                if (intweight < 0){
+                    Toast.makeText(MainActivity.this, "Weight Never Comes in Minus", Toast.LENGTH_SHORT).show();
+                    intweight = 0;
+                }
+                weight2 = String.valueOf(intweight);
+                mcurrentweight.setText(weight2);
+                return false;
             }
         });
 
